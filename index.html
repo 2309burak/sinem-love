@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+<meta charset="UTF-8">
+<title>Sinem ❤️</title>
+<style>
+body {
+    margin: 0;
+    padding: 0;
+    background: linear-gradient(135deg, #ff9a9e, #fad0c4);
+    text-align: center;
+    font-family: Arial, sans-serif;
+    overflow: hidden;
+}
+
+h1 {
+    margin-top: 60px;
+    color: white;
+    font-size: 36px;
+}
+
+h2 {
+    color: white;
+}
+
+button {
+    margin-top: 30px;
+    padding: 15px 25px;
+    font-size: 18px;
+    background-color: white;
+    color: #ff4d6d;
+    border: none;
+    border-radius: 25px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+button:hover {
+    transform: scale(1.1);
+}
+
+#messageBox {
+    margin-top: 40px;
+    color: white;
+    font-size: 20px;
+    width: 80%;
+    margin-left: auto;
+    margin-right: auto;
+    display: none;
+}
+
+.heart {
+    position: absolute;
+    color: red;
+    animation: float 5s linear infinite;
+}
+
+@keyframes float {
+    0% {transform: translateY(100vh); opacity: 1;}
+    100% {transform: translateY(-10vh); opacity: 0;}
+}
+
+#ytplayer {
+    display: none;
+}
+</style>
+</head>
+
+<body>
+
+<h1>💖 Sinem 💖</h1>
+<h2>Sevgililer Günün Kutlu Olsun</h2>
+
+<button onclick="startLove()">Sürprizi Aç 💌</button>
+
+<div id="messageBox">
+    <p>Hayatıma girdiğin gün, dünyam değişti.</p>
+    <p>Sen benim en güzel tesadüfüm değil, en güzel seçimimsin.</p>
+    <p>Yanımda olduğun her an, en özel an.</p>
+    <p>Seni tarif etmeye kelimeler yetmez Sinem...</p>
+    <h2>İyi ki varsın ❤️</h2>
+</div>
+
+<iframe id="ytplayer" 
+    src="https://www.youtube.com/embed/RdF-0lhZtJI?autoplay=1&loop=1&playlist=RdF-0lhZtJI"
+    allow="autoplay"
+></iframe>
+
+<script>
+function startLove() {
+    document.getElementById("messageBox").style.display = "block";
+
+    var player = document.getElementById("ytplayer");
+    player.style.display = "block";
+
+    setInterval(function(){
+        var heart = document.createElement("div");
+        heart.className = "heart";
+        heart.innerHTML = "❤️";
+        heart.style.left = Math.random() * 100 + "vw";
+        heart.style.fontSize = (Math.random() * 20 + 20) + "px";
+        document.body.appendChild(heart);
+
+        setTimeout(function(){
+            heart.remove();
+        }, 5000);
+    }, 300);
+}
+</script>
+
+</body>
+</html>
